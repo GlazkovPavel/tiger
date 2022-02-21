@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 400;
+  src: url("Inter-Regular.woff2") format("woff2"),
+  url("Inter-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("Inter-Medium.woff2?v=3.15") format("woff2"),
+  url("Inter-Medium.woff?v=3.15") format("woff");
+}
+
+@font-face {
+  font-family: 'Shizuru';
+  font-style:  normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("shizuru-v5-latin-regular.woff2") format("woff2"),
+  url('shizuru-v5-latin-regular.woff') format("woff");
+}
+
+@font-face {
+  font-family: 'Shizuru';
+  font-style: normal;
+  font-weight: 400;
+  src: url('shizuru-v5-latin-regular.woff2') format('woff2'),
+  url('shizuru-v5-latin-regular.woff') format('woff');
+}
+
+/* kosugi-maru-regular - latin_cyrillic */
+@font-face {
+  font-family: 'Kosugi Maru';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+  url('kosugi-maru-v11-latin_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('kosugi-maru-v11-latin_cyrillic-regular.woff') format('woff'); /* Modern Browsers */
+}
