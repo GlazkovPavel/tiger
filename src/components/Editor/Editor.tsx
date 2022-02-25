@@ -3,20 +3,32 @@ import React from "react";
 
 export function Editor() {
     const [search, setSearch] = React.useState('');
+    const [arr, setArr] = React.useState(['']);
+    const [text, setText] = React.useState('');
 
-    function handleSearchChange(e: any) {
+    function handleSearchChange(e: any ) {
 
         function color() {
             return 'rgb(' + (Math.round(Math.random() * 255)).toString(10) + ',' + (Math.round(Math.random() * 255)).toString(10) + ',' + (Math.round(Math.random() * 255)).toString(10) + ')';
         }
 
-        setSearch( (e.nativeEvent.data)
-            .replace(/./gi, `<span id="output" style="color: ${color()}" class="output" >$&</span>`)
+        setSearch( (e.target.value)
+            //.replace(/./gi, `<span id="output" style="color: ${color()}" class="output" >$&</span>`)
             .replace(/\n/g, '<br/>'));
-        console.log((e.nativeEvent.data)
-            .replace(/./gi, `<span id="output" style="color: ${color()}" class="output" >$&</span>`)
+        console.log((e.target.value)
+            .replace(/./gi, '""')
             .replace(/\n/g, '<br/>'));
 
+        //search.split(' ')
+
+        //setText(search.replace(/./gi, `<span id="output" style="color: ${color()}" class="output" >$&</span>`))
+
+        const t = search.split('')
+        t.forEach((value) => {
+            return  console.log(value)
+        })
+
+        console.log()
 
     }
     // function red() {
@@ -45,7 +57,7 @@ export function Editor() {
                     className="textarea" />
             </form>
 
-            <div   dangerouslySetInnerHTML={createMarkup(search)}/>
+            <div   dangerouslySetInnerHTML={createMarkup(text)}/>
 
         </div>
     )
