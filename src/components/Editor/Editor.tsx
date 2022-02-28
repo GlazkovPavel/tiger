@@ -3,8 +3,8 @@ import React from "react";
 
 export function Editor() {
     const [search, setSearch] = React.useState('');
-    const [arr, setArr] = React.useState(['']);
-    const [text, setText] = React.useState('');
+    //const [arr, setArr] = React.useState(['']);
+    //const [text, setText] = React.useState('');
 
     function handleSearchChange(e: any ) {
 
@@ -13,34 +13,17 @@ export function Editor() {
         }
 
         setSearch( (e.target.value)
-            //.replace(/./gi, `<span id="output" style="color: ${color()}" class="output" >$&</span>`)
+            .replace(/./gi, `<span id="output" style="color: ${color()}" class="output" >$&</span>`)
             .replace(/\n/g, '<br/>'));
         console.log((e.target.value)
-            .replace(/./gi, '""')
+            .replace(/./gi, `<span id="output" style="color: ${color()}" class="output" >$&</span>`)
             .replace(/\n/g, '<br/>'));
 
-        //search.split(' ')
-
-        //setText(search.replace(/./gi, `<span id="output" style="color: ${color()}" class="output" >$&</span>`))
-
-        const t = search.split('')
-        t.forEach((value) => {
-            return  console.log(value)
-        })
-
-        console.log()
-
     }
-    // function red() {
-    //     let ttt =  'color: rgb(' + (Math.round(Math.random() * 255)).toString(10) + ',' + (Math.round(Math.random() * 255)).toString(10) + ',' + (Math.round(Math.random() * 255)).toString(10) + ')';
-    //     const span = document.getElementById(".output")!;
-    //     span.style.color = ttt;
-    // }
 
     function createMarkup(text: string) {
         return {__html: text};
     }
-
 
     return(
         <div className="editor">
@@ -57,8 +40,7 @@ export function Editor() {
                     className="textarea" />
             </form>
 
-            <div   dangerouslySetInnerHTML={createMarkup(text)}/>
-
+            <div   dangerouslySetInnerHTML={createMarkup(search)}/>
         </div>
     )
 }
