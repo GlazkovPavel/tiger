@@ -3,3 +3,7 @@ export interface IAutoInterface {
     src: string,
     id: number
 }
+
+export interface IOverlay {
+    overlay: any;
+}

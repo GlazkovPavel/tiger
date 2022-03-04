@@ -6,6 +6,7 @@ import './Auto.css';
 
 export function Auto(){
 
+
     return(
         <section className="auto">
 

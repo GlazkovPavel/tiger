@@ -1,0 +1,46 @@
+.popup{
+    font-family: 'Inter', 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s linear;
+}
+.popup_opened{
+    transition: visibility 0s, opacity 0.3s linear;
+    visibility: visible;
+    opacity: 1;
+
+}
+.popup__preview-container{
+    position: relative;
+    margin: auto;
+}
+
+.popup__preview-img{
+    display: block;
+    max-width: 75vw;
+    max-height: 75vh;
+    object-fit: cover;
+}
+.popup__preview-subtitle{
+    font-family: 'Inter', 'Arial', 'Helvetica', 'sans-serif';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+}
+@media(max-width: 420px){
+    .popup__preview-img{
+        width: 240px;
+        height: 299px;
+    }
+}

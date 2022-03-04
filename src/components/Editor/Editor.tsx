@@ -12,14 +12,30 @@ export function Editor() {
             return 'rgb(' + (Math.round(Math.random() * 255)).toString(10) + ',' + (Math.round(Math.random() * 255)).toString(10) + ',' + (Math.round(Math.random() * 255)).toString(10) + ')';
         }
 
-        setSearch( (e.target.value)
-            .replace(/./gi, `<span id="output" style="color: ${color()}" class="output" >$&</span>`)
-            .replace(/\n/g, '<br/>'));
-        console.log((e.target.value)
-            .replace(/./gi, `<span id="output" style="color: ${color()}" class="output" >$&</span>`)
-            .replace(/\n/g, '<br/>'));
+        const value = e.nativeEvent.data
+            // .replace(/./gi, `<span id="output" style="color: ${color()}" class="output" >$&</span>`)
+            // .replace(/\n/g, '<br/>')
+
+
+        if(!!value) {
+            setSearch(value
+                .replace(/./gi, `<span id="output" style="color: ${color()}" class="output" >$&</span>`)
+                .replace(/\n/g, '<br/>'))
+        } else {
+            return setSearch('<br/>');
+        }
+
+        console.log(search)
+
+        const result = document.querySelector('.result');
+
+        //result?.innerHTML = search
+
+
 
     }
+
+
 
     function createMarkup(text: string) {
         return {__html: text};
@@ -40,7 +56,7 @@ export function Editor() {
                     className="textarea" />
             </form>
 
-            <div   dangerouslySetInnerHTML={createMarkup(search)}/>
+            <div className="result" />
         </div>
     )
 }
