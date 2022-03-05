@@ -13,7 +13,7 @@ export function Auto(){
             <h2  className="auto__text">Наши подборки</h2>
 
             <ul className="auto__grid">
-                {cars?.map((auto: IAutoInterface) => 
+                {cars?.map((auto) =>
                     <AutoCard
                         title={auto.title}
                         src={auto.src}

@@ -3,13 +3,16 @@ import "./AutoCard.css";
 import {IAutoInterface} from "../../shared/auto.interface";
 import {PopupAuto} from "../PopupAuto/PopupAuto";
 
-export function AutoCard(props: IAutoInterface) {
+export function AutoCard(props) {
     const [openPopup, setOpenPopup] = React.useState(false);
 
-    function onOpen() {
+    const onOpen = () => {
         setOpenPopup(true);
     }
 
+    const closePopup = () => {
+        setOpenPopup(false);
+    }
     return(
        <>
            <li className="auto__item" >
@@ -21,7 +24,7 @@ export function AutoCard(props: IAutoInterface) {
             </div>
         </li>
 
-        <PopupAuto isOpen={openPopup} />
+        <PopupAuto isOpen={openPopup} onClose={closePopup} car={props}/>
     </>
     )
 }
